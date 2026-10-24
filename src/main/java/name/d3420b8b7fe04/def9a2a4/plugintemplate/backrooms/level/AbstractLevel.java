@@ -1,8 +1,9 @@
+
 package name.d3420b8b7fe04.def9a2a4.plugintemplate.backrooms.level;
 
 import name.d3420b8b7fe04.def9a2a4.plugintemplate.backrooms.BackroomsPlugin;
 import name.d3420b8b7fe04.def9a2a4.plugintemplate.backrooms.player.BackroomsPlayerState;
-import org.bukkit.GameRules;
+import org.bukkit.GameRule;
 import org.bukkit.World;
 import org.bukkit.entity.Player;
 
@@ -20,10 +21,10 @@ public abstract class AbstractLevel implements BackroomsLevel {
     @Override
     public void configureWorld(World world) {
         this.world = world;
-        world.setGameRule(GameRules.SPAWN_MOBS, false);
-        world.setGameRule(GameRules.ADVANCE_TIME, false);
-        world.setGameRule(GameRules.MOB_GRIEFING, false);
-        world.setGameRule(GameRules.ADVANCE_WEATHER, false);
+        world.setGameRule(GameRule.DO_MOB_SPAWNING, false);
+        world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, false);
+        world.setGameRule(GameRule.MOB_GRIEFING, false);
+        world.setGameRule(GameRule.DO_WEATHER_CYCLE, false);
     }
 
     @Override
